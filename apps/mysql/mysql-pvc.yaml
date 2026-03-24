@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pvc
+  namespace: ai-services
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path  # 修改为集群现有的 StorageClass
+  resources:
+    requests:
+      storage: 5Gi
